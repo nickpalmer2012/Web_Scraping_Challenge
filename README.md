@@ -10,4 +10,15 @@ Module 11 Challenge repo
 - Excluding the imports, here is what chat GPT gave me as a possible solution:
 - ![image](https://github.com/nickpalmer2012/Web_Scraping_Challenge/assets/128104435/5390ac68-a17a-4559-ba20-a43c174d55c1)
 
+### Estimating the number of Earth days in a Martian year:
+- Chat GPT wanted me to use the .apply function to apply a function to the terrestrial_date column
+- This is the example code it gave me to add a column with the number of earth days that 'Curiosity' has been on Mars: df['days_since_reference'] = df['date_column'].apply(lambda x: (x - reference_date).days)
 
+- This is my code I used to get the earth_days column:  mars_df['earth_days'] = mars_df['terrestrial_date'].apply(lambda x: (x - earliest_terrestrial_date).days)
+
+- My understanding is that the .apply() function applies whatever function is contained within the parenthesis.
+- The 'lambda x' function in this instance assigns x to the value in the terrestrial date column.
+- We defined the 'lambda x' function as x minus the earliest date in the dataset.
+- The result is a new column 'earth_days' in the mars_df dataframe where we subtract the first date in the dataset from the date in whatever row is being evaluated.
+- We now have an xaxis to plot the min temperatures on to make a visual estimate about the length of a Martian year.
+   
