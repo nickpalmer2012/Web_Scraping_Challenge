@@ -16,7 +16,7 @@ Module 11 Challenge repo
 
 - This is my code I used to get the earth_days column:  mars_df['earth_days'] = mars_df['terrestrial_date'].apply(lambda x: (x - earliest_terrestrial_date).days)
 
-- My understanding is that the .apply() function applies whatever function is contained within the parenthesis.
+- My understanding is that the .apply() function applies whatever function is contained within the parenthesis to the referenced dataframe column on the left of the '.'.
 - The 'lambda x' function in this instance assigns x to the value in the terrestrial date column.
 - We defined the 'lambda x' function as x minus the earliest date in the dataset.
 - The result is a new column 'earth_days' in the mars_df dataframe where we subtract the first date in the dataset from the date in whatever row is being evaluated.
